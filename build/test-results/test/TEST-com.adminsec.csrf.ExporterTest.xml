@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.adminsec.csrf.ExporterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-07-13T23:02:38" hostname="parrot" time="0.072">
-  <properties/>
-  <testcase name="exportContainsEvidenceButNoRawSecretValues()" classname="com.adminsec.csrf.ExporterTest" time="0.059"/>
-  <testcase name="csvProtectsSpreadsheetFormulaCells()" classname="com.adminsec.csrf.ExporterTest" time="0.01"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
