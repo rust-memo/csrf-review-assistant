@@ -1,0 +1,5 @@
+Uuid: b1ecdf12-2234-411a-b2b6-ba32dd5170b8
+ExtensionType: 1
+EntryPoint: build/libs/csrf-review-assistant-1.0.0.jar
+BuildCommand: ./gradlew clean test jar
+BurpVersion: 2026.4

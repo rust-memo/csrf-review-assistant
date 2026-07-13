@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.adminsec.csrf.CsrfAnalyzerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-07-13T23:02:38" hostname="parrot" time="0.12">
+  <properties/>
+  <testcase name="jsonRequestIsCandidateButBrowserBarrierReducesPriority()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.062"/>
+  <testcase name="recordsTokenButNeverClaimsServerValidation()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.007"/>
+  <testcase name="graphqlMutationIsDetected()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.004"/>
+  <testcase name="sameSiteStrictIsEvidenceNotAutomaticProof()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.012"/>
+  <testcase name="learnsCustomNonceFromHtmlAndRecognizesItLater()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.002"/>
+  <testcase name="csrfNamedCookieAloneIsNotAcceptedAsProtection()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.003"/>
+  <testcase name="originHeaderDoesNotTurnCandidateIntoProtected()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.003"/>
+  <testcase name="suppressesBearerOnlyApiInConservativeMode()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.002"/>
+  <testcase name="sensitiveGetIsIncludedButOrdinaryGetIsIgnored()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.003"/>
+  <testcase name="flagsSensitiveFormWithSessionCookieAndNoTokenAsP1()" classname="com.adminsec.csrf.CsrfAnalyzerTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

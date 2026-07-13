@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.adminsec.csrf.TestVariantFactoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-07-13T23:02:38" hostname="parrot" time="2.145">
+  <properties/>
+  <testcase name="pocEscapesAttackerControlledFieldValuesAndOmitsToken()" classname="com.adminsec.csrf.TestVariantFactoryTest" time="2.047"/>
+  <testcase name="buildsVariantsWithoutSendingAndPreservesActionFields()" classname="com.adminsec.csrf.TestVariantFactoryTest" time="0.096"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
