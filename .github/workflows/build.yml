@@ -26,4 +26,3 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           path: build/libs/csrf-review-assistant-1.0.0.jar
-          archive: false
