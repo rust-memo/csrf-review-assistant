@@ -7,6 +7,7 @@ public enum ReviewStatus {
     private final String label;
     ReviewStatus(String label) { this.label = label; }
     public String label() { return label; }
+    @Override public String toString() { return label; }
     public static ReviewStatus from(String value) {
         for (ReviewStatus status : values()) if (status.name().equals(value) || status.label.equals(value)) return status;
         return NEW;

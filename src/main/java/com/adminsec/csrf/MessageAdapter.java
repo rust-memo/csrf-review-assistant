@@ -21,11 +21,15 @@ public final class MessageAdapter {
         List<String> setCookies = response == null ? List.of() : response.headers().stream()
                 .filter(h -> h.name().equalsIgnoreCase("Set-Cookie")).map(HttpHeader::value).toList();
         return new AnalysisInput(request.method(), request.url(), request.httpService().host(), request.pathWithoutQuery(),
-                request.headerValue("Content-Type"), headers, fields, body, responseBody, setCookies);
+                request.headerValue("Content-Type"), headers, fields, body, responseBody, setCookies,
+                response == null ? Map.of() : headers(response.headers()), response == null ? 0 : response.statusCode());
     }
     private static Map<String, String> headers(List<HttpHeader> input) {
         Map<String, String> result = new LinkedHashMap<>();
-        for (HttpHeader header : input) result.merge(header.name(), header.value(), (a, b) -> a + ", " + b);
+        for (HttpHeader header : input) {
+            String separator = header.name().equalsIgnoreCase("Cookie") ? "; " : ", ";
+            result.merge(header.name(), header.value(), (a, b) -> a + separator + b);
+        }
         return result;
     }
 }

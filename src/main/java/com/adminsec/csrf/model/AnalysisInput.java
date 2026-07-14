@@ -13,7 +13,16 @@ public record AnalysisInput(
         List<InputField> fields,
         String body,
         String responseBody,
-        List<String> setCookieHeaders) {
+        List<String> setCookieHeaders,
+        Map<String, String> responseHeaders,
+        int responseStatus) {
+
+    public AnalysisInput(String method, String url, String host, String path, String contentType,
+                         Map<String, String> headers, List<InputField> fields, String body,
+                         String responseBody, List<String> setCookieHeaders) {
+        this(method, url, host, path, contentType, headers, fields, body, responseBody,
+                setCookieHeaders, Map.of(), 0);
+    }
 
     public record InputField(String name, String value, String location) { }
 }

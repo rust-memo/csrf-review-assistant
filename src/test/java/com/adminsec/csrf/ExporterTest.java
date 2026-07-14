@@ -28,4 +28,21 @@ class ExporterTest {
         Candidate candidate = new Candidate("key", assessment, null, ReviewStatus.NEW, "");
         assertTrue(new Exporter().csv(List.of(candidate)).contains("\"'=HYPERLINK"));
     }
+
+    @Test void privacyModeOmitsNotesCompletely() {
+        Assessment assessment = new Assessment("example.test|POST|/account", "Sensitive", "Cookie", true,
+                "No token", "", "Origin absent", "SameSite unknown", "Browser-forgeable",
+                Priority.REVIEW_1, "High", List.of());
+        Candidate candidate = new Candidate("key", assessment, null, ReviewStatus.NEW, "private reviewer note token=secret-value");
+        String json = new Exporter().json(List.of(candidate), false);
+        assertFalse(json.contains("private reviewer note"));
+        assertFalse(json.contains("note"));
+    }
+
+    @Test void redactsJsonAssignmentsAndInlineAuthorizationSchemes() {
+        String redacted = Redaction.redact("{\"client_secret\":\"raw-value\"} Bearer abcdefghijklmnop");
+        assertFalse(redacted.contains("raw-value"));
+        assertFalse(redacted.contains("abcdefghijklmnop"));
+        assertTrue(redacted.contains("REDACTED"));
+    }
 }

@@ -8,6 +8,7 @@ import java.security.MessageDigest;
 import java.util.HexFormat;
 
 public final class ProjectStore {
+    private static final int MAX_NOTE_LENGTH = 50_000;
     private final PersistedObject data;
     public ProjectStore(PersistedObject data) { this.data = data; }
 
@@ -23,7 +24,8 @@ public final class ProjectStore {
     public void save(String key, ReviewStatus status, String note) {
         if (data == null) return;
         data.setString("status." + safe(key), status.name());
-        data.setString("note." + safe(key), note == null ? "" : note);
+        String value = note == null ? "" : note;
+        data.setString("note." + safe(key), value.length() <= MAX_NOTE_LENGTH ? value : value.substring(0, MAX_NOTE_LENGTH));
     }
     private static String safe(String key) {
         try { return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(key.getBytes(StandardCharsets.UTF_8))); }
