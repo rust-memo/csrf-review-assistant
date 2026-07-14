@@ -1,8 +1,9 @@
 # This is a Gradle generated file for dependency locking.
 # Manual edits can break the build and are not advised.
 # This file is expected to be part of source control.
-com.google.code.gson:gson:2.13.2=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-com.google.errorprone:error_prone_annotations:2.41.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
+# To regenerate this file, run: ./gradlew :dependencies --write-locks
+com.google.code.gson:gson:2.14.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
+com.google.errorprone:error_prone_annotations:2.48.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 net.bytebuddy:byte-buddy-agent:1.17.7=testCompileClasspath,testRuntimeClasspath
 net.bytebuddy:byte-buddy:1.17.7=testCompileClasspath,testRuntimeClasspath
 net.portswigger.burp.extensions:montoya-api:2026.4=compileClasspath,testCompileClasspath,testRuntimeClasspath
